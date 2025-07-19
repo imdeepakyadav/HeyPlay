@@ -14,11 +14,13 @@ import { API_BASE_URL } from "../config/constants";
 import { useAuth } from "../context/AuthContext";
 import { useSocket } from "../context/SocketContext";
 import { styles } from "../css/styles";
+import { RootStackParamList } from "../types/navigation";
 
-type RoomScreenRouteProp = RouteProp<{ Room: { roomId: string } }, "Room">;
+type RoomScreenRouteProp = RouteProp<RootStackParamList, "Room">;
+type RoomScreenNavigationProp = NavigationProp<RootStackParamList, "Room">;
 
 interface RoomScreenProps {
-  navigation: NavigationProp<any>;
+  navigation: RoomScreenNavigationProp;
   route: RoomScreenRouteProp;
 }
 

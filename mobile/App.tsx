@@ -20,8 +20,11 @@ import { SocketProvider } from "./src/context/SocketContext";
 // Import components
 import { MusicPlayer } from "./src/components/MusicPlayer";
 
-const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
+// Import types
+import { RootStackParamList, TabParamList } from "./src/types/navigation";
+
+const Stack = createStackNavigator<RootStackParamList>();
+const Tab = createBottomTabNavigator<TabParamList>();
 
 // Tab Navigator for authenticated users
 function MainTabNavigator() {
