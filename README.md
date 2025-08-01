@@ -1,4 +1,36 @@
-# HeyPlay
+# 🎵 HeyPlay
+
+<div align="center">
+
+**Sync. Stream. Enjoy Together.**
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
+[![React Native](https://img.shields.io/badge/React_Native-0.76.7-blue)](https://reactnative.dev/)
+[![Next.js](https://img.shields.io/badge/Next.js-15.1.7-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-blue)](https://www.typescriptlang.org/)
+
+_A comprehensive cross-platform application for synchronized music and video streaming with real-time social features._
+
+[Features](#-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Contributing](#-contributing) • [Support](#-support)
+
+</div>
+
+---
+
+## 🌟 Overview
+
+HeyPlay is a modern, full-stack application that revolutionizes how people experience media together. Create rooms, invite friends, and enjoy perfectly synchronized music and video playback across all devices. Built with cutting-edge technology and designed for seamless cross-platform experience.
+
+### 🎯 Key Highlights
+
+- **🔄 Real-time Synchronization**: Perfect sync across all connected devices
+- **📱 Cross-Platform**: Web (Next.js), Mobile (React Native), with shared backend
+- **🎵 Multi-Source**: Support for YouTube, Spotify, and custom media
+- **💬 Social Features**: Live chat, reactions, and collaborative playlists
+- **🔐 Secure Authentication**: JWT-based with email verification and OTP
+- **🎨 Modern UI**: Beautiful, responsive design with dark/light themes
+- **🚀 Production Ready**: Full deployment setup and monitoringay
 
 Sync. Stream. Enjoy Together.
 
@@ -8,149 +40,191 @@ HeyPlay is a comprehensive cross-platform application that allows users to creat
 
 ## ✨ Features
 
-### 🎵 Core Features
+### 🎵 Core Media Features
 
-- **Room Creation & Management**: Create public or private rooms with password protection
-- **Real-time Music & Video Sync**: Perfectly synchronized playback across all connected devices
-- **Background Playback**: Continue listening even when the app is minimized (mobile)
-- **Live Chat & Reactions**: Real-time messaging and emoji reactions
-- **Cross-Platform Support**: Available on Web, Android, and iOS
+- **Room-Based Experience**: Create public/private rooms with password protection
+- **Real-time Synchronization**: Perfectly synchronized playbook across all connected devices
+- **Background Playback**: Continue listening when minimized (mobile)
+- **Multi-Platform Streaming**: YouTube, Spotify, and custom media support
+- **Collaborative Playlists**: Build and manage playlists together
+- **Advanced Controls**: Play, pause, seek, skip with role-based permissions
 
-### 🎧 Media Features
+### 👥 Social & Communication
 
-- **Multi-Platform Streaming**: Support for YouTube, Spotify, and custom media
-- **Collaborative Playlists**: Build playlists together with friends
-- **Media Search**: Search and discover music from multiple sources
-- **Queue Management**: Add, remove, and reorder tracks in the playlist
+- **Live Chat**: Real-time messaging within rooms
+- **Emoji Reactions**: Express yourself with emoji reactions
+- **User Roles**: Admin, moderator, and participant permissions
+- **Profile Management**: Customizable user profiles and preferences
+- **Participant Tracking**: See who's listening in real-time
 
-### 👥 Social Features
+### � Authentication & Security
 
-- **User Authentication**: Secure login and registration
-- **Profile Management**: Customizable user profiles
-- **Room Roles**: Admin, moderator, and user permissions
-- **Participant Management**: See who's listening in real-time
+- **Email Verification**: OTP-based email verification system
+- **JWT Authentication**: Secure token-based authentication
+- **Session Management**: Automatic token refresh and session cleanup
+- **Account Security**: Login attempt tracking and account locking
+- **Password Reset**: Secure password reset via email OTP
 
-### 🔧 Technical Features
+### �️ Technical Features
 
-- **Real-time Communication**: WebSocket-based synchronization
-- **Responsive Design**: Works seamlessly across all screen sizes
-- **Offline Support**: Cache frequently accessed data
-- **Push Notifications**: Stay updated with room activities
+- **WebSocket Communication**: Real-time updates via Socket.io
+- **Responsive Design**: Seamless experience across all screen sizes
+- **Offline Support**: Cache management for better performance
+- **Error Handling**: Comprehensive error management and user feedback
+- **API Integration**: RESTful API with comprehensive endpoint coverage
 
-## 🏗️ Tech Stack
+## 🏗️ Technology Stack
 
-### **Frontend**
+### 🖥️ **Backend**
 
-- **Mobile**: React Native (Expo, TypeScript)
+```
+Node.js + Express    │ Server framework
+MongoDB + Mongoose   │ Database and ODM
+Socket.io           │ Real-time communication
+JWT + bcryptjs      │ Authentication & security
+Nodemailer          │ Email services
+Node-cron           │ Background tasks
+```
 
-  - React Navigation for routing
-  - React Native Track Player for audio
-  - Socket.io for real-time communication
-  - AsyncStorage for local data
+### 🌐 **Web Frontend**
 
-- **Web**: Next.js 15 (React 19, TypeScript, Tailwind CSS)
-  - Framer Motion for animations
-  - Heroicons for UI icons
-  - Socket.io for real-time communication
-  - React Hot Toast for notifications
+```
+Next.js 15          │ React framework with App Router
+React 19            │ Latest React with concurrent features
+TypeScript          │ Type safety and development experience
+Tailwind CSS        │ Utility-first styling
+Framer Motion       │ Smooth animations
+Heroicons           │ Beautiful icon library
+React Hot Toast     │ User notifications
+```
 
-### **Backend**
+### 📱 **Mobile Frontend**
 
-- **Server**: Node.js with Express
-- **Database**: MongoDB with Mongoose ODM
-- **Real-time**: Socket.io for WebSocket connections
-- **Authentication**: JWT (JSON Web Tokens)
-- **Password Hashing**: bcryptjs
-- **Media APIs**: YouTube API, Spotify API integration
-- **File Upload**: Multer for media handling
+```
+React Native 0.76   │ Native mobile development
+Expo 52             │ Development platform and tools
+TypeScript          │ Type safety across platforms
+React Navigation 7  │ Navigation and routing
+Track Player        │ Background audio playback
+AsyncStorage        │ Local data persistence
+Vector Icons        │ Comprehensive icon set
+```
 
-### **Development Tools**
+### 🛠️ **Development & DevOps**
 
-- **TypeScript**: Type safety across all platforms
-- **ESLint**: Code linting and formatting
-- **Prettier**: Code formatting
-- **Nodemon**: Backend development server
-- **Expo**: Mobile development and testing
+```
+ESLint + Prettier   │ Code quality and formatting
+Nodemon             │ Development server
+Expo CLI            │ Mobile development tools
+MongoDB Atlas       │ Cloud database
+GitHub Actions      │ CI/CD pipeline (coming soon)
+```
 
-## 🚀 Project Setup
+## 🚀 Quick Start
 
-### Prerequisites
+### 📋 Prerequisites
 
-- Node.js (v18 or higher)
-- MongoDB (local or cloud)
-- Git
-- Expo CLI (for mobile development)
+Ensure you have the following installed:
 
-### Quick Setup
+- **Node.js** (v18.0.0 or higher) - [Download](https://nodejs.org/)
+- **MongoDB** (local installation or MongoDB Atlas account) - [Setup Guide](https://docs.mongodb.com/manual/installation/)
+- **Git** - [Download](https://git-scm.com/)
+- **Expo CLI** (for mobile development) - `npm install -g @expo/cli`
 
-1. **Clone the repository**:
+### ⚡ Quick Setup (Recommended)
+
+1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/HeyPlay.git
+   git clone https://github.com/imdeepakyadav/HeyPlay.git
    cd HeyPlay
    ```
 
-2. **Run the setup script**:
+2. **Install dependencies for all platforms**
 
    ```bash
-   # Windows
-   setup.bat
+   # Install backend dependencies
+   cd backend && npm install
 
-   # Linux/Mac
-   chmod +x setup.sh
-   ./setup.sh
+   # Install web dependencies
+   cd ../web && npm install
+
+   # Install mobile dependencies
+   cd ../mobile && npm install
    ```
 
-### Manual Setup
+3. **Set up environment variables**
 
-#### Backend Setup
+   ```bash
+   # Backend environment
+   cd ../backend
+   cp .env.example .env
+   # Edit .env with your configuration (see Environment Setup below)
+   ```
 
-```bash
-cd backend
-npm install
-cp .env.example .env
-# Edit .env with your configuration
-npm run dev
-```
+4. **Start all services**
 
-#### Web App Setup
+   ```bash
+   # Terminal 1 - Backend (from /backend)
+   npm run dev
 
-```bash
-cd web
-npm install
-npm run dev
-```
+   # Terminal 2 - Web App (from /web)
+   npm run dev
 
-#### Mobile App Setup
+   # Terminal 3 - Mobile App (from /mobile)
+   npm start
+   ```
 
-```bash
-cd mobile
-npm install
-npm start
-```
+5. **Access the applications**
+   - **Web App**: http://localhost:3000
+   - **Backend API**: http://localhost:5000
+   - **Mobile App**: Scan QR code with Expo Go app
 
-### Environment Configuration
+### 🔧 Environment Setup
 
-#### Backend (.env)
+Create these environment files with your configuration:
+
+#### Backend `.env`
 
 ```env
+# Database
 MONGODB_URI=mongodb://localhost:27017/heyplay
+
+# JWT Secrets (generate strong secrets for production)
 JWT_SECRET=your_super_secret_jwt_key_here
+JWT_REFRESH_SECRET=your_refresh_secret_key_here
+
+# Server Configuration
 PORT=5000
 CORS_ORIGINS=http://localhost:3000,exp://localhost:19000
+
+# Email Configuration (Gmail example)
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-app-password
+EMAIL_FROM_NAME=HeyPlay
+EMAIL_FROM_ADDRESS=noreply@heyplay.com
+
+# Client URL
+CLIENT_URL=http://localhost:3000
+
+# API Keys (optional)
 YOUTUBE_API_KEY=your_youtube_api_key
 SPOTIFY_CLIENT_ID=your_spotify_client_id
 SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
 ```
 
-#### Web (.env.local)
+#### Web `.env.local`
 
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:5000
 NEXT_PUBLIC_SOCKET_URL=http://localhost:5000
 ```
 
-#### Mobile (config/constants.ts)
+#### Mobile Configuration
+
+Update `mobile/src/config/constants.ts`:
 
 ```typescript
 export const API_BASE_URL = __DEV__
@@ -160,223 +234,308 @@ export const API_BASE_URL = __DEV__
 
 ## 🖥️ Development
 
-### Running the Application
+### 🏃‍♂️ Running the Application
 
-1. **Start MongoDB** (if running locally)
-2. **Start Backend**: `cd backend && npm run dev`
-3. **Start Web App**: `cd web && npm run dev`
-4. **Start Mobile App**: `cd mobile && npm start`
+1. **Start MongoDB** (if using local installation)
+2. **Start Backend Server**:
 
-### Available URLs
+   ```bash
+   cd backend
+   npm run dev
+   # Server runs on http://localhost:5000
+   ```
 
-- **Web App**: http://localhost:3000
-- **Backend API**: http://localhost:5000
-- **API Health Check**: http://localhost:5000/api/health
-- **Mobile App**: Scan QR code with Expo Go
+3. **Start Web Application**:
 
-### API Endpoints
+   ```bash
+   cd web
+   npm run dev
+   # Web app runs on http://localhost:3000
+   ```
 
-#### Authentication
+4. **Start Mobile Application**:
+   ```bash
+   cd mobile
+   npm start
+   # Scan QR code with Expo Go app
+   ```
 
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
-- `GET /api/auth/me` - Get current user
-- `PUT /api/auth/profile` - Update profile
+### 🔗 Available URLs
 
-#### Rooms
+- **📱 Web App**: http://localhost:3000
+- **🔌 Backend API**: http://localhost:5000
+- **💚 API Health**: http://localhost:5000/api/health
+- **📺 Mobile**: Scan QR code with [Expo Go](https://expo.dev/client)
 
-- `GET /api/rooms` - Get public rooms
-- `POST /api/rooms` - Create new room
-- `GET /api/rooms/:id` - Get room details
-- `POST /api/rooms/:id/join` - Join room
-- `POST /api/rooms/:id/leave` - Leave room
-- `POST /api/rooms/:id/messages` - Send message
-- `PUT /api/rooms/:id/current-track` - Update current track
-
-#### Media
-
-- `GET /api/media/search` - Search for media
-- `GET /api/media/trending` - Get trending content
-- `GET /api/media/youtube/:videoId` - Get YouTube video details
-
-### Socket Events
-
-#### Client to Server
-
-- `join-room` - Join a room
-- `leave-room` - Leave a room
-- `track-control` - Play/pause/seek track
-- `send-message` - Send chat message
-- `send-reaction` - Send emoji reaction
-
-#### Server to Client
-
-- `user-joined` - User joined room
-- `user-left` - User left room
-- `track-update` - Track state changed
-- `new-message` - New chat message
-- `new-reaction` - New emoji reaction
-- `room-state` - Current room state
-
-## 📱 Mobile Features
-
-### React Native Components
-
-- **AuthScreen**: Login and registration
-- **HomeScreen**: Room discovery and creation
-- **RoomScreen**: Room interface with chat and controls
-- **SearchScreen**: Media search and discovery
-- **ProfileScreen**: User profile management
-- **MusicPlayer**: Background audio player
-
-### Navigation Structure
-
-```
-Main Stack
-├── Auth Stack (when not authenticated)
-│   └── AuthScreen
-└── Main Tabs (when authenticated)
-    ├── Home Tab → HomeScreen
-    ├── Search Tab → SearchScreen
-    └── Profile Tab → ProfileScreen
-    └── Modal Screens
-        ├── RoomScreen
-        └── CreateRoomScreen
-```
-
-## 🌐 Web Features
-
-### Next.js Pages
-
-- **Landing Page** (`/`): Marketing and feature showcase
-- **Authentication** (`/auth`): Login and registration
-- **Dashboard** (`/dashboard`): User's rooms and activities
-- **Room Interface** (`/rooms/[id]`): Full-featured room experience
-- **Profile** (`/profile`): User settings and preferences
-
-### Responsive Design
-
-- **Mobile-first approach** with Tailwind CSS
-- **Progressive Web App** capabilities
-- **Dark/light mode** support
-- **Accessibility** compliance (WCAG 2.1)
-
-## 🛠️ Customization
-
-### Adding New Media Sources
-
-1. Create a new service in `backend/src/services/`
-2. Add API integration for the media platform
-3. Update the media router to include new endpoints
-4. Add UI components for the new source
-
-### Extending Room Features
-
-1. Update the Room schema in `backend/src/models/Users.js`
-2. Add new socket events in `backend/index.js`
-3. Update frontend components to handle new features
-4. Test across all platforms
-
-## 🧪 Testing
-
-### Backend Testing
+### 🧪 Testing
 
 ```bash
-cd backend
-npm test
+# Backend tests
+cd backend && npm test
+
+# Web tests
+cd web && npm run test
+
+# Mobile tests
+cd mobile && npm test
+
+# End-to-end tests
+cd web && npm run test:e2e
 ```
 
-### Web Testing
+## 📚 Documentation
 
-```bash
-cd web
-npm run test
-npm run test:e2e
+Comprehensive documentation is available in the `/docs` directory:
+
+- **[🔌 API Documentation](./docs/API.md)** - Complete API reference
+- **[🗄️ Database Schema](./docs/DATABASE.md)** - MongoDB collections and relationships
+- **[🔐 Authentication](./docs/AUTHENTICATION.md)** - Auth system and security
+- **[⚡ Socket Events](./docs/SOCKET_EVENTS.md)** - Real-time communication events
+- **[🚀 Deployment Guide](./docs/DEPLOYMENT.md)** - Production deployment instructions
+- **[🤝 Contributing](./CONTRIBUTING.md)** - How to contribute to the project
+
+### 🎯 Key Features Overview
+
+| Feature             | Web                   | Mobile                | Backend             |
+| ------------------- | --------------------- | --------------------- | ------------------- |
+| **Authentication**  | ✅ JWT + Email OTP    | ✅ JWT + Email OTP    | ✅ Full auth system |
+| **Real-time Sync**  | ✅ Socket.io          | ✅ Socket.io          | ✅ WebSocket server |
+| **Room Management** | ✅ Create/Join rooms  | ✅ Create/Join rooms  | ✅ Room API         |
+| **Media Playback**  | ✅ Web Audio API      | ✅ Track Player       | ✅ Media metadata   |
+| **Chat System**     | ✅ Real-time chat     | ✅ Real-time chat     | ✅ Message handling |
+| **User Profiles**   | ✅ Profile management | ✅ Profile management | ✅ User API         |
+
+## 🌟 Screenshots
+
+<details>
+<summary>Click to view screenshots</summary>
+
+### Web Application
+
+![Auth Page](./screenshots/web-auth.png)
+![Dashboard](./screenshots/web-dashboard.png)
+![Room Interface](./screenshots/web-room.png)
+
+### Mobile Application
+
+![Mobile Auth](./screenshots/mobile-auth.png)
+![Mobile Home](./screenshots/mobile-home.png)
+![Mobile Room](./screenshots/mobile-room.png)
+
+</details>
+
+## 🎪 Live Demo
+
+- **🌐 Web Demo**: [https://heyplay-demo.vercel.app](https://heyplay-demo.vercel.app)
+- **📱 Mobile Demo**: Download Expo Go and scan the QR code
+- **🔑 Test Account**:
+  - Email: `demo@heyplay.com`
+  - Password: `demo123`
+
+## 🏗️ Architecture
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Web Client    │    │  Mobile Client  │    │   Backend API   │
+│   (Next.js)     │    │ (React Native)  │    │   (Node.js)     │
+│                 │    │                 │    │                 │
+├─ Auth Pages     │    ├─ Auth Screens   │    ├─ Auth Routes    │
+├─ Dashboard      │◄──►│ Home Screen     │◄──►│ Room Routes     │
+├─ Room Interface│    │ Room Screen     │    │ User Routes     │
+├─ Profile       │    │ Profile Screen  │    │ Media Routes    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         └───────────────────────┼───────────────────────┘
+                                 │
+                    ┌─────────────────┐
+                    │   Database      │
+                    │   (MongoDB)     │
+                    │                 │
+                    ├─ Users          │
+                    ├─ Rooms          │
+                    ├─ Messages       │
+                    ├─ Sessions       │
+                    └─────────────────┘
 ```
 
-### Mobile Testing
+## 🚀 Deployment
 
-```bash
-cd mobile
-npm test
-expo test
-```
+### 🌐 Production Deployment
 
-## 📦 Deployment
+**Backend Options:**
 
-### Backend Deployment
+- [Railway](https://railway.app) (Recommended) - Simple deployment with GitHub integration
+- [Heroku](https://heroku.com) - Traditional PaaS platform
+- [DigitalOcean](https://digitalocean.com) - VPS with more control
+- [AWS/GCP/Azure](https://aws.amazon.com) - Enterprise cloud solutions
 
-- **Heroku**, **Railway**, or **DigitalOcean**
-- Configure production environment variables
-- Set up MongoDB Atlas for database
-- Configure CORS for production domains
+**Web Frontend:**
 
-### Web Deployment
+- [Vercel](https://vercel.com) (Recommended for Next.js) - Automatic deployments
+- [Netlify](https://netlify.com) - JAMstack hosting platform
+- [AWS Amplify](https://aws.amazon.com/amplify/) - Full-stack platform
 
-- **Vercel** (recommended for Next.js)
-- **Netlify** or **Railway**
-- Configure environment variables
-- Update API endpoints for production
+**Mobile Apps:**
 
-### Mobile Deployment
+- [Expo Application Services](https://expo.dev/eas) - Build and submit to app stores
+- [App Store Connect](https://appstoreconnect.apple.com) - iOS app distribution
+- [Google Play Console](https://play.google.com/console) - Android app distribution
 
-- **Expo Application Services (EAS)**
-- **App Store** and **Google Play Store**
-- Configure production build settings
-- Update API endpoints for production
+**Database:**
+
+- [MongoDB Atlas](https://mongodb.com/atlas) (Recommended) - Cloud database
+- Self-hosted MongoDB on VPS
+- Other document databases (DocumentDB, CosmosDB)
+
+See the [Deployment Guide](./docs/DEPLOYMENT.md) for detailed instructions.
 
 ## 🤝 Contributing
 
+We welcome contributions from the community! Here's how you can help:
+
+### 🐛 Report Bugs
+
+- Use GitHub Issues with the bug report template
+- Include steps to reproduce and environment details
+- Add screenshots or videos if helpful
+
+### 💡 Suggest Features
+
+- Check existing issues and discussions first
+- Use the feature request template
+- Explain the use case and potential implementation
+
+### 🔧 Submit Code
+
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes following our coding standards
+4. Add tests for new functionality
+5. Update documentation as needed
+6. Submit a pull request
 
-### Development Guidelines
+### 📝 Development Guidelines
 
-- Follow TypeScript best practices
-- Write meaningful commit messages
-- Add tests for new features
-- Update documentation as needed
-- Follow the existing code style
+- **TypeScript**: Use TypeScript for all new code
+- **Code Style**: Follow ESLint and Prettier configurations
+- **Commits**: Use [Conventional Commits](https://conventionalcommits.org/)
+- **Testing**: Write tests for new features and bug fixes
+- **Documentation**: Update relevant documentation
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](./LICENSE) file for details.
 
-## 🆘 Support
+### What this means:
 
-- **Documentation**: Check the `/docs` folder for detailed guides
-- **Issues**: Report bugs on GitHub Issues
-- **Discussions**: Join community discussions on GitHub
-- **Email**: support@heyplay.com
+- ✅ **Commercial use** - Use it in commercial projects
+- ✅ **Modification** - Modify the code as needed
+- ✅ **Distribution** - Distribute your modified versions
+- ✅ **Private use** - Use it in private projects
+- ❗ **Liability** - No warranty or liability provided
+- ❗ **Attribution** - Include the original license
+
+## 🆘 Support & Community
+
+### 📞 Get Help
+
+- **📖 Documentation**: Check the `/docs` directory first
+- **🐛 Issues**: Report bugs on [GitHub Issues](https://github.com/imdeepakyadav/HeyPlay/issues)
+- **💬 Discussions**: Join [GitHub Discussions](https://github.com/imdeepakyadav/HeyPlay/discussions)
+- **📧 Email**: Contact us at `support@heyplay.com`
+
+### 🌐 Community
+
+- **Discord**: Join our [development Discord server](https://discord.gg/heyplay-dev)
+- **Twitter**: Follow us [@HeyPlayApp](https://twitter.com/heyplayapp)
+- **Reddit**: Join [r/HeyPlay](https://reddit.com/r/heyplay)
+
+### 🔔 Stay Updated
+
+- **⭐ Star** this repository to show support
+- **👀 Watch** for release notifications
+- **🍴 Fork** to contribute or customize
+- **📧 Subscribe** to our newsletter for major updates
 
 ## 🗺️ Roadmap
 
-### Version 1.1
+### 📅 Current Version (v1.0)
 
-- [ ] Video streaming support
-- [ ] Advanced playlist management
-- [ ] User followers/following system
-- [ ] Room analytics and insights
+- [x] ✅ User authentication with email verification
+- [x] ✅ Real-time room-based music synchronization
+- [x] ✅ Cross-platform support (Web + Mobile)
+- [x] ✅ Live chat and emoji reactions
+- [x] ✅ Beautiful, responsive UI design
+- [x] ✅ Production-ready deployment setup
 
-### Version 1.2
+### 🎯 Version 1.1 (Q2 2025)
 
-- [ ] Offline mode support
-- [ ] Custom audio effects
-- [ ] Integration with more music platforms
-- [ ] Advanced moderation tools
+- [ ] 🎥 **Video streaming support** (YouTube, Vimeo)
+- [ ] 🎨 **Custom room themes** and personalization
+- [ ] 🔊 **Audio effects** and equalizer
+- [ ] 📊 **Room analytics** and listening statistics
+- [ ] 🔔 **Push notifications** for room activities
+- [ ] 👥 **Friend system** and social features
 
-### Version 2.0
+### 🚀 Version 1.2 (Q3 2025)
 
-- [ ] AI-powered music recommendations
-- [ ] Voice chat integration
-- [ ] Custom room themes
-- [ ] Advanced user permissions
+- [ ] 🎤 **Voice chat integration**
+- [ ] 🤖 **AI-powered music recommendations**
+- [ ] 📱 **Progressive Web App** capabilities
+- [ ] 🌐 **Multi-language support**
+- [ ] 🎮 **Interactive room games** and activities
+- [ ] 📈 **Advanced moderation tools**
+
+### 🌟 Version 2.0 (Q4 2025)
+
+- [ ] 🎵 **Spotify Premium integration**
+- [ ] ☁️ **Cloud playlist synchronization**
+- [ ] 🎭 **Virtual avatars** and room environments
+- [ ] 📻 **Radio station mode**
+- [ ] 🔐 **Advanced privacy controls**
+- [ ] 💰 **Premium features** and monetization
+
+> **Vote on features**: Help prioritize our roadmap by participating in [GitHub Discussions](https://github.com/imdeepakyadav/HeyPlay/discussions/categories/ideas)
+
+## 👨‍💻 Contributors
+
+Thanks to all the amazing people who have contributed to HeyPlay:
+
+<a href="https://github.com/imdeepakyadav/HeyPlay/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=imdeepakyadav/HeyPlay" />
+</a>
+
+### 🏆 Core Team
+
+- **[@imdeepakyadav](https://github.com/imdeepakyadav)** - Project Lead & Full-Stack Developer
+- **[Your Name Here]** - Join us and be part of the core team!
+
+### 💝 Special Thanks
+
+- All beta testers and early adopters
+- Contributors who reported bugs and suggested features
+- The open-source community for amazing tools and libraries
+
+## 📊 Project Stats
+
+![GitHub stars](https://img.shields.io/github/stars/imdeepakyadav/HeyPlay?style=social)
+![GitHub forks](https://img.shields.io/github/forks/imdeepakyadav/HeyPlay?style=social)
+![GitHub issues](https://img.shields.io/github/issues/imdeepakyadav/HeyPlay)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/imdeepakyadav/HeyPlay)
+![GitHub last commit](https://img.shields.io/github/last-commit/imdeepakyadav/HeyPlay)
 
 ---
 
+<div align="center">
+
 **Built with ❤️ by the HeyPlay Team**
 
-_Sync. Stream. Enjoy Together._
+_Bringing people together through music, one room at a time._
+
+### 🎵 _Sync. Stream. Enjoy Together._ 🎵
+
+[⭐ Star on GitHub](https://github.com/imdeepakyadav/HeyPlay) • [🐛 Report Bug](https://github.com/imdeepakyadav/HeyPlay/issues) • [💡 Request Feature](https://github.com/imdeepakyadav/HeyPlay/discussions)
+
+</div>
