@@ -7,8 +7,11 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+
+// Import AuthService
+import authService from "../../lib/authService";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
@@ -35,22 +38,9 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  useEffect(() => {
-    const token = localStorage.getItem("authToken");
-    const userData = localStorage.getItem("user");
-
-    if (!token || !userData) {
-      router.push("/auth");
-      return;
-    }
-
-    setUser(JSON.parse(userData));
-    fetchRooms();
-  }, [router]);
-
-  const fetchRooms = async () => {
+  const fetchRooms = useCallback(async () => {
     try {
-      const token = localStorage.getItem("authToken");
+      const token = authService.getAccessToken();
       const response = await fetch(`${API_BASE_URL}/api/rooms`, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -60,6 +50,11 @@ export default function DashboardPage() {
       if (response.ok) {
         const data = await response.json();
         setRooms(data);
+      } else if (response.status === 401) {
+        // Token expired or invalid
+        toast.error("Session expired. Please login again.");
+        authService.logout();
+        router.push("/auth");
       } else {
         toast.error("Failed to load rooms");
       }
@@ -69,12 +64,32 @@ export default function DashboardPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [router]);
 
-  const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    localStorage.removeItem("user");
-    router.push("/");
+  useEffect(() => {
+    // Check if user is authenticated using authService
+    if (!authService.isAuthenticated()) {
+      router.push("/auth");
+      return;
+    }
+
+    const userData = authService.getUser();
+    if (userData) {
+      setUser(userData);
+    }
+
+    fetchRooms();
+  }, [router, fetchRooms]);
+
+  const handleLogout = async () => {
+    try {
+      await authService.logout();
+      router.push("/auth");
+    } catch (error) {
+      console.error("Logout error:", error);
+      // Even if logout API fails, logout method already clears storage
+      router.push("/auth");
+    }
   };
 
   if (loading) {

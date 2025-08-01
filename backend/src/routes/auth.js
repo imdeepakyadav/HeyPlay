@@ -16,6 +16,7 @@ router.post("/register", async (req, res) => {
     // Validation
     if (!username || !email || !password) {
       return res.status(400).json({
+        success: false,
         message: "All fields are required",
         code: "MISSING_FIELDS",
       });
@@ -23,6 +24,7 @@ router.post("/register", async (req, res) => {
 
     if (password.length < 6) {
       return res.status(400).json({
+        success: false,
         message: "Password must be at least 6 characters",
         code: "WEAK_PASSWORD",
       });
@@ -32,6 +34,7 @@ router.post("/register", async (req, res) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return res.status(400).json({
+        success: false,
         message: "Please provide a valid email address",
         code: "INVALID_EMAIL",
       });
@@ -42,11 +45,13 @@ router.post("/register", async (req, res) => {
     if (existingUser) {
       if (existingUser.email === email) {
         return res.status(400).json({
+          success: false,
           message: "Email already registered",
           code: "EMAIL_EXISTS",
         });
       } else {
         return res.status(400).json({
+          success: false,
           message: "Username already taken",
           code: "USERNAME_EXISTS",
         });
@@ -78,12 +83,14 @@ router.post("/register", async (req, res) => {
       // Clean up user if email fails
       await User.findByIdAndDelete(user._id);
       return res.status(500).json({
+        success: false,
         message: "Failed to send verification email. Please try again.",
         code: "EMAIL_SEND_FAILED",
       });
     }
 
     res.status(201).json({
+      success: true,
       message:
         "Registration successful. Please check your email for verification OTP.",
       userId: user._id,
@@ -93,6 +100,7 @@ router.post("/register", async (req, res) => {
   } catch (error) {
     console.error("Registration error:", error);
     res.status(500).json({
+      success: false,
       message: "Error creating user",
       code: "REGISTRATION_FAILED",
     });
@@ -106,6 +114,7 @@ router.post("/verify-email", async (req, res) => {
 
     if (!email || !otp) {
       return res.status(400).json({
+        success: false,
         message: "Email and OTP are required",
         code: "MISSING_FIELDS",
       });
@@ -119,6 +128,7 @@ router.post("/verify-email", async (req, res) => {
 
     if (!user) {
       return res.status(400).json({
+        success: false,
         message: "Invalid or expired OTP",
         code: "INVALID_OTP",
       });
@@ -141,6 +151,7 @@ router.post("/verify-email", async (req, res) => {
     await emailService.sendWelcomeEmail(user.email, user.username);
 
     res.json({
+      success: true,
       message: "Email verified successfully",
       accessToken,
       refreshToken,
@@ -155,6 +166,7 @@ router.post("/verify-email", async (req, res) => {
   } catch (error) {
     console.error("Email verification error:", error);
     res.status(500).json({
+      success: false,
       message: "Error verifying email",
       code: "VERIFICATION_FAILED",
     });
@@ -168,6 +180,7 @@ router.post("/resend-verification", async (req, res) => {
 
     if (!email) {
       return res.status(400).json({
+        success: false,
         message: "Email is required",
         code: "MISSING_EMAIL",
       });
@@ -177,6 +190,7 @@ router.post("/resend-verification", async (req, res) => {
 
     if (!user) {
       return res.status(400).json({
+        success: false,
         message: "User not found or already verified",
         code: "USER_NOT_FOUND",
       });
@@ -199,17 +213,20 @@ router.post("/resend-verification", async (req, res) => {
 
     if (!emailSent) {
       return res.status(500).json({
+        success: false,
         message: "Failed to send verification email",
         code: "EMAIL_SEND_FAILED",
       });
     }
 
     res.json({
+      success: true,
       message: "Verification OTP sent successfully",
     });
   } catch (error) {
     console.error("Resend verification error:", error);
     res.status(500).json({
+      success: false,
       message: "Error resending verification",
       code: "RESEND_FAILED",
     });
@@ -224,6 +241,7 @@ router.post("/login", async (req, res) => {
     // Validation
     if (!email || !password) {
       return res.status(400).json({
+        success: false,
         message: "Email and password are required",
         code: "MISSING_FIELDS",
       });
@@ -232,6 +250,7 @@ router.post("/login", async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({
+        success: false,
         message: "Invalid credentials",
         code: "INVALID_CREDENTIALS",
       });
@@ -241,6 +260,7 @@ router.post("/login", async (req, res) => {
     const isLocked = await sessionService.isAccountLocked(user._id);
     if (isLocked) {
       return res.status(423).json({
+        success: false,
         message:
           "Account is temporarily locked due to multiple failed login attempts. Please try again later.",
         code: "ACCOUNT_LOCKED",
@@ -252,6 +272,7 @@ router.post("/login", async (req, res) => {
       // Increment login attempts
       await sessionService.incrementLoginAttempts(user._id);
       return res.status(400).json({
+        success: false,
         message: "Invalid credentials",
         code: "INVALID_CREDENTIALS",
       });
@@ -260,6 +281,7 @@ router.post("/login", async (req, res) => {
     // Check if email is verified
     if (!user.isEmailVerified) {
       return res.status(401).json({
+        success: false,
         message: "Please verify your email address first",
         code: "EMAIL_NOT_VERIFIED",
         email: user.email,
@@ -274,6 +296,7 @@ router.post("/login", async (req, res) => {
     await sessionService.updateLastLogin(user._id);
 
     res.json({
+      success: true,
       message: "Login successful",
       accessToken,
       refreshToken,
@@ -289,6 +312,7 @@ router.post("/login", async (req, res) => {
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({
+      success: false,
       message: "Error logging in",
       code: "LOGIN_FAILED",
     });

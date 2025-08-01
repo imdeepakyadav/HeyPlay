@@ -3,6 +3,23 @@ const crypto = require("crypto");
 
 class EmailService {
   constructor() {
+    console.log("🔧 Initializing Email Service...");
+    console.log("📧 Email Host:", process.env.EMAIL_HOST);
+    console.log("📧 Email Port:", process.env.EMAIL_PORT);
+    console.log("📧 Email User:", process.env.EMAIL_USER);
+    console.log(
+      "📧 Email From:",
+      process.env.EMAIL_FROM_ADDRESS || process.env.EMAIL_USER
+    );
+
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error("❌ Email credentials not configured!");
+      console.log("🔧 Please set EMAIL_USER and EMAIL_PASS in .env file");
+      console.log(
+        "🔧 For Gmail, use an App Password instead of your regular password"
+      );
+    }
+
     this.transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST || "smtp.gmail.com",
       port: process.env.EMAIL_PORT || 587,
@@ -11,6 +28,37 @@ class EmailService {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
+      tls: {
+        rejectUnauthorized: false,
+      },
+    });
+
+    // Verify transporter configuration
+    this.transporter.verify((error, success) => {
+      if (error) {
+        console.error("❌ Email service configuration error:", error.message);
+        if (error.code === "EAUTH") {
+          console.log("\n🚨 GMAIL AUTHENTICATION FAILED!");
+          console.log("🔧 To fix this issue:");
+          console.log(
+            "   ✅ 1. Enable 2-Factor Authentication on your Google account"
+          );
+          console.log("   ✅ 2. Generate App Password:");
+          console.log("      - Go to: https://myaccount.google.com/security");
+          console.log(
+            "      - Click 'App passwords' (under 2-Step Verification)"
+          );
+          console.log(
+            "      - Select 'Mail' and generate a 16-character password"
+          );
+          console.log(
+            "   ✅ 3. Use the app password in EMAIL_PASS (not your regular password)"
+          );
+          console.log("   ✅ 4. Restart the server after updating .env\n");
+        }
+      } else {
+        console.log("✅ Email service is ready to send emails");
+      }
     });
   }
 
