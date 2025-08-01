@@ -1,0 +1,126 @@
+name: ❓ Question / Support
+description: Ask a question or get support for using HeyPlay
+title: "[QUESTION] "
+labels: ["question", "support"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your question! 🤔
+        Please search existing issues and documentation first to see if your question has already been answered.
+
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: Question Type
+      description: What type of question is this?
+      options:
+        - Setup and Installation
+        - Configuration
+        - Usage and Features
+        - Development and Contributing
+        - Deployment
+        - Troubleshooting
+        - Architecture and Design
+        - Best Practices
+        - Integration with other tools
+        - General
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Which platform is your question about?
+      multiple: true
+      options:
+        - Web (Next.js)
+        - Mobile (React Native)
+        - Backend (Node.js)
+        - Database
+        - General/All platforms
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know?
+      placeholder: Please describe your question in detail
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What are you trying to accomplish? What have you already tried?
+      placeholder: |
+        - What I'm trying to do: ...
+        - What I've already tried: ...
+        - Where I'm stuck: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: relevant-code
+    attributes:
+      label: Relevant Code or Configuration
+      description: If applicable, include relevant code snippets or configuration
+      render: javascript
+      placeholder: |
+        // Your code here
+        function example() {
+          // ...
+        }
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Details
+      description: Relevant environment information
+      placeholder: |
+        - OS: Windows/macOS/Linux
+        - Node.js version: 
+        - Package versions:
+        - Browser (if web):
+        - Device (if mobile):
+      render: markdown
+
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: Expected Outcome
+      description: What outcome are you hoping to achieve?
+      placeholder: What you expect to happen or accomplish
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Any other information that might be helpful
+      placeholder: Screenshots, error messages, links to documentation you've read, etc.
+
+  - type: checkboxes
+    id: research
+    attributes:
+      label: Research Done
+      description: Please confirm you've done some basic research
+      options:
+        - label: I have searched existing issues for similar questions
+          required: true
+        - label: I have checked the project documentation
+          required: true
+        - label: I have tried to solve this myself first
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](../CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

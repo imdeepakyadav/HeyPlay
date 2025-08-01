@@ -10,7 +10,7 @@ The HeyPlay team takes security seriously. If you discover a security vulnerabil
 
 Instead, please report security issues by emailing:
 
-- **Security Team**: security@heyplay.app
+- **Security Team**: heyplay.live@gmail.com
 - **Lead Developer**: work.deepak.yadav@gmail.com
 
 ### What to Include
@@ -147,8 +147,8 @@ We use various tools to maintain security:
 
 For security-related questions or concerns:
 
-- **Security Team**: security@heyplay.app
-- **General Contact**: contact@heyplay.app
+- **Security Team**: heyplay.live@gmail.com
+- **General Contact**: heyplay.live@gmail.com
 - **GitHub Issues**: For non-security related issues only
 
 ---

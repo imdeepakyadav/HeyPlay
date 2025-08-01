@@ -1,0 +1,146 @@
+name: 🚀 Performance Issue
+description: Report a performance problem or optimization opportunity
+title: "[PERFORMANCE] "
+labels: ["performance", "optimization", "needs-investigation"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us make HeyPlay faster! ⚡
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Which platform is experiencing performance issues?
+      multiple: true
+      options:
+        - Web (Next.js)
+        - Mobile (React Native)
+        - Backend (Node.js)
+        - Database
+        - Real-time (Socket.io)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: performance-type
+    attributes:
+      label: Performance Issue Type
+      description: What type of performance issue is this?
+      options:
+        - Slow loading times
+        - High memory usage
+        - High CPU usage
+        - Large bundle size
+        - Database query performance
+        - Network request delays
+        - UI lag or stuttering
+        - Battery drain (mobile)
+        - Real-time sync delays
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Performance Issue Description
+      description: Describe the performance problem you're experiencing
+      placeholder: Detailed description of the performance issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this performance issue?
+      placeholder: |
+        1. Go to '...'
+        2. Perform action '...'
+        3. Notice slow performance in '...'
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-performance
+    attributes:
+      label: Expected Performance
+      description: What performance did you expect?
+      placeholder: Expected load time, memory usage, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-performance
+    attributes:
+      label: Actual Performance
+      description: What performance are you actually experiencing?
+      placeholder: Actual load time, memory usage, measurements, etc.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Performance Impact
+      description: How severe is this performance issue?
+      options:
+        - Low - Slightly noticeable
+        - Medium - Noticeably impacts user experience
+        - High - Significantly impacts usability
+        - Critical - Makes the application unusable
+    validations:
+      required: true
+
+  - type: input
+    id: device-specs
+    attributes:
+      label: Device Specifications
+      description: What device/hardware are you testing on?
+      placeholder: ex. iPhone 15 Pro, MacBook Pro M2, Windows 11 i7-12700K 32GB RAM
+
+  - type: input
+    id: network-conditions
+    attributes:
+      label: Network Conditions
+      description: What network conditions are you testing under?
+      placeholder: ex. WiFi, 4G, 5G, slow 3G, offline
+
+  - type: textarea
+    id: performance-data
+    attributes:
+      label: Performance Measurements
+      description: Any specific measurements, profiling data, or performance metrics
+      placeholder: |
+        - Load time: X seconds
+        - Memory usage: X MB
+        - CPU usage: X%
+        - Bundle size: X MB
+        - Network requests: X requests taking X seconds
+      render: markdown
+
+  - type: textarea
+    id: suggested-solution
+    attributes:
+      label: Suggested Solution
+      description: Do you have any ideas for how to improve this performance issue?
+      placeholder: Ideas for optimization or improvement
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context, screenshots, or profiling data
+      placeholder: Additional information, screenshots of dev tools, etc.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](../CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

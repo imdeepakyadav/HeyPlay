@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Critical Security Vulnerability
+    url: mailto:heyplay.live@gmail.com
+    about: Please report critical security vulnerabilities privately via email
+  - name: 💬 Discord Community
+    url: https://discord.gg/heyplay-dev
+    about: Join our Discord server for real-time discussions and community support
+  - name: 📖 Documentation
+    url: https://github.com/imdeepakyadav/HeyPlay/tree/main/docs
+    about: Check our comprehensive documentation for setup guides and API reference
+  - name: 🤝 Contributing Guide
+    url: https://github.com/imdeepakyadav/HeyPlay/blob/main/CONTRIBUTING.md
+    about: Learn how to contribute to HeyPlay development

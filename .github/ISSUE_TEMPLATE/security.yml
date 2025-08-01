@@ -1,0 +1,132 @@
+name: 🛡️ Security Issue
+description: Report a security vulnerability (use this for non-critical issues only)
+title: "[SECURITY] "
+labels: ["security", "needs-review"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **IMPORTANT**: If you've found a critical security vulnerability, please DO NOT create a public issue. 
+        Instead, please email us privately at heyplay.live@gmail.com or imdeepakyadav@gmail.com
+
+        Use this template only for non-critical security improvements or questions.
+
+  - type: checkboxes
+    id: severity-check
+    attributes:
+      label: Security Issue Severity
+      description: Please confirm this is not a critical security vulnerability
+      options:
+        - label: This is NOT a critical security vulnerability that could compromise user data or system security
+          required: true
+        - label: I understand that critical vulnerabilities should be reported privately via email
+          required: true
+
+  - type: dropdown
+    id: security-type
+    attributes:
+      label: Security Issue Type
+      description: What type of security issue or improvement is this?
+      options:
+        - Security enhancement suggestion
+        - Security best practice question
+        - Dependency security update needed
+        - Security documentation improvement
+        - Security configuration question
+        - Minor security hardening opportunity
+        - Security testing improvement
+        - Other non-critical security topic
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Which platform does this security issue relate to?
+      multiple: true
+      options:
+        - Web (Next.js)
+        - Mobile (React Native)
+        - Backend (Node.js)
+        - Database
+        - Infrastructure
+        - All platforms
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Security Issue Description
+      description: Describe the security concern or improvement suggestion
+      placeholder: Detailed description of the security issue or enhancement
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Security Behavior
+      description: How does the current implementation handle this security aspect?
+      placeholder: Current security implementation or lack thereof
+
+  - type: textarea
+    id: suggested-improvement
+    attributes:
+      label: Suggested Security Improvement
+      description: How do you suggest we improve the security?
+      placeholder: Suggested security enhancement or fix
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact-level
+    attributes:
+      label: Potential Impact Level
+      description: What's the potential impact if this security issue is not addressed?
+      options:
+        - Low - Minor security improvement
+        - Medium - Moderate security enhancement
+        - High - Important security hardening (but not critical vulnerability)
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Security References
+      description: Any relevant security standards, best practices, or documentation
+      placeholder: |
+        - OWASP guidelines
+        - Security best practices
+        - Relevant CVEs or security advisories
+        - Documentation links
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context about this security issue
+      placeholder: Additional security considerations
+
+  - type: checkboxes
+    id: responsible-disclosure
+    attributes:
+      label: Responsible Disclosure
+      description: Security reporting acknowledgment
+      options:
+        - label: I confirm this is not a critical vulnerability and can be discussed publicly
+          required: true
+        - label: I have read the project's Security Policy
+          required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](../CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

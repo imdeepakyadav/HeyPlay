@@ -59,7 +59,7 @@ This Code of Conduct applies within all community spaces, and also applies when 
 
 If you experience or witness unacceptable behavior, please report it by contacting the project team at:
 
-- **Primary Contact**: conduct@heyplay.app
+- **Primary Contact**: heyplay.live@gmail.com
 - **Secondary Contact**: work.deepak.yadav@gmail.com
 - **Anonymous Reporting**: [Form link would go here]
 
@@ -187,9 +187,9 @@ For answers to common questions about this code of conduct, see the FAQ at https
 
 ## Contact Information
 
-- **General Questions**: contact@heyplay.app
-- **Code of Conduct Issues**: conduct@heyplay.app
-- **Security Issues**: security@heyplay.app
+- **General Questions**: heyplay.live@gmail.com
+- **Code of Conduct Issues**: heyplay.live@gmail.com
+- **Security Issues**: heyplay.live@gmail.com
 - **Project Maintainer**: work.deepak.yadav@gmail.com
 
 ## Updates

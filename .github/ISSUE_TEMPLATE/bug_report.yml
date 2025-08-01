@@ -1,0 +1,151 @@
+name: 🐛 Bug Report
+description: File a bug report to help us improve HeyPlay
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! 🙏
+
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Which platform are you experiencing this issue on?
+      options:
+        - Web (Next.js)
+        - Mobile (React Native)
+        - Backend (Node.js)
+        - All platforms
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Please provide detailed steps to reproduce the bug
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should have happened instead?
+      placeholder: Describe the expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem
+      placeholder: Drag and drop images here or paste them
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Browser (if web issue)
+      description: Which browser are you using?
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+
+  - type: input
+    id: browser-version
+    attributes:
+      label: Browser Version
+      description: What version of the browser are you using?
+      placeholder: ex. Chrome 118.0.5993.88
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: Which OS are you using?
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - iOS
+        - Android
+
+  - type: input
+    id: os-version
+    attributes:
+      label: OS Version
+      description: What version of the OS are you using?
+      placeholder: ex. Windows 11, macOS 14.1, Android 14
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device Type (if mobile)
+      description: What type of device are you using?
+      options:
+        - Phone
+        - Tablet
+        - Desktop
+        - Other
+
+  - type: input
+    id: device-model
+    attributes:
+      label: Device Model
+      description: What specific device model? (e.g., iPhone 15, Samsung Galaxy S23)
+      placeholder: ex. iPhone 15 Pro, Samsung Galaxy S23
+
+  - type: textarea
+    id: console-logs
+    attributes:
+      label: Console Logs / Error Messages
+      description: Please copy and paste any relevant console output or error messages
+      render: shell
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here
+      placeholder: Any additional information that might help us understand the issue
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](../CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
