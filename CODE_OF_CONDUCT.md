@@ -60,7 +60,7 @@ This Code of Conduct applies within all community spaces, and also applies when 
 If you experience or witness unacceptable behavior, please report it by contacting the project team at:
 
 - **Primary Contact**: conduct@heyplay.app
-- **Secondary Contact**: imdeepakyadav@gmail.com
+- **Secondary Contact**: work.deepak.yadav@gmail.com
 - **Anonymous Reporting**: [Form link would go here]
 
 ### What to Include
@@ -190,7 +190,7 @@ For answers to common questions about this code of conduct, see the FAQ at https
 - **General Questions**: contact@heyplay.app
 - **Code of Conduct Issues**: conduct@heyplay.app
 - **Security Issues**: security@heyplay.app
-- **Project Maintainer**: imdeepakyadav@gmail.com
+- **Project Maintainer**: work.deepak.yadav@gmail.com
 
 ## Updates
 
