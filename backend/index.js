@@ -4,7 +4,10 @@ const http = require("http");
 const socketIo = require("socket.io");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const cron = require("node-cron");
 require("dotenv").config();
+
+const sessionService = require("./src/services/sessionService");
 
 const app = express();
 const server = http.createServer(app);
@@ -29,6 +32,7 @@ app.use(
     credentials: true,
   })
 );
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -46,6 +50,19 @@ const connectDB = async () => {
 };
 
 connectDB();
+
+// Setup cron jobs
+cron.schedule(
+  "0 0 * * *",
+  async () => {
+    // Run daily at midnight to cleanup expired tokens
+    console.log("Running daily token cleanup...");
+    await sessionService.cleanupExpiredTokens();
+  },
+  {
+    timezone: "UTC",
+  }
+);
 
 // Import models
 const { User, Room } = require("./src/models/Users");

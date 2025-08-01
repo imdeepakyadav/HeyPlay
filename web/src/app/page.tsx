@@ -75,23 +75,23 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-white to-pink-100">
       {/* Navigation */}
-      <nav className="flex items-center justify-between p-6 lg:px-8">
+      <nav className="flex items-center justify-between p-4 sm:p-6 lg:px-12">
         <div className="flex items-center space-x-2">
-          <MusicalNoteIcon className="h-8 w-8 text-blue-600" />
-          <span className="text-2xl font-bold text-gray-900">HeyPlay</span>
+          <MusicalNoteIcon className="h-8 w-8 text-pink-500" />
+          <span className="text-2xl font-bold text-indigo-900">HeyPlay</span>
         </div>
         <div className="flex items-center space-x-4">
           <Link
             href="/auth"
-            className="text-gray-600 hover:text-gray-900 transition-colors"
+            className="text-indigo-600 hover:text-pink-500 font-semibold transition-colors"
           >
             Sign In
           </Link>
           <Link
             href="/auth?mode=register"
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            className="bg-pink-500 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-indigo-600 transition-colors"
           >
             Get Started
           </Link>
@@ -103,29 +103,29 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
         transition={{ duration: 0.6 }}
-        className="relative px-6 lg:px-8 py-24"
+        className="relative px-4 sm:px-6 lg:px-12 py-16 sm:py-24"
       >
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-indigo-900 mb-6">
             Sync. Stream.{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-indigo-600">
               Enjoy Together.
             </span>
           </h1>
-          <p className="text-xl lg:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 mb-8 sm:mb-12 max-w-2xl mx-auto">
             Create rooms, invite friends, and experience synchronized music and
             video playback. Real-time reactions and chat included.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/auth?mode=register"
-              className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+              className="bg-pink-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-600 transition-colors shadow-lg"
             >
               Start Listening Together
             </Link>
             <Link
               href="/rooms"
-              className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400 transition-colors"
+              className="border-2 border-indigo-300 text-indigo-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-pink-400 transition-colors"
             >
               Browse Public Rooms
             </Link>
@@ -137,13 +137,15 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.9 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-20 mx-auto max-w-6xl"
+          className="mt-12 sm:mt-20 mx-auto max-w-4xl sm:max-w-6xl"
         >
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <div className="bg-gray-100 aspect-video flex items-center justify-center">
               <div className="text-center">
-                <PlayIcon className="h-24 w-24 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500 text-lg">App Preview Coming Soon</p>
+                <PlayIcon className="h-20 sm:h-24 w-20 sm:w-24 text-pink-300 mx-auto mb-4" />
+                <p className="text-gray-400 text-base sm:text-lg">
+                  App Preview Coming Soon
+                </p>
               </div>
             </div>
           </div>
@@ -151,13 +153,13 @@ export default function Home() {
       </motion.div>
 
       {/* Features Section */}
-      <div className="py-24 bg-white">
+      <div className="py-16 sm:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-4xl font-bold tracking-tight text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-indigo-900 mb-4">
               Everything you need for social streaming
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-base sm:text-lg text-gray-700">
               HeyPlay brings people together through music and shared
               experiences.
             </p>
@@ -170,13 +172,15 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow"
+                className="text-center p-4 sm:p-6 rounded-xl hover:shadow-xl transition-shadow bg-gradient-to-br from-white via-indigo-50 to-pink-50"
               >
-                <feature.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <feature.icon className="h-10 sm:h-12 w-10 sm:w-12 text-pink-500 mx-auto mb-4" />
+                <h3 className="text-lg sm:text-xl font-semibold text-indigo-900 mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-gray-700 text-sm sm:text-base">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -184,13 +188,13 @@ export default function Home() {
       </div>
 
       {/* Platform Support */}
-      <div className="py-24 bg-gray-50">
+      <div className="py-16 sm:py-24 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-4xl font-bold tracking-tight text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-indigo-900 mb-4">
               Available everywhere
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-base sm:text-lg text-gray-700">
               Access HeyPlay on all your favorite devices and platforms.
             </p>
           </div>
@@ -205,13 +209,15 @@ export default function Home() {
                   scale: isVisible ? 1 : 0.9,
                 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white p-8 rounded-xl text-center shadow-lg"
+                className="bg-white p-6 sm:p-8 rounded-xl text-center shadow-xl border border-indigo-100"
               >
-                <platform.icon className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+                <platform.icon className="h-12 sm:h-16 w-12 sm:w-16 text-pink-500 mx-auto mb-4" />
+                <h3 className="text-lg sm:text-2xl font-semibold text-indigo-900 mb-2">
                   {platform.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{platform.description}</p>
+                <p className="text-gray-700 mb-4 text-sm sm:text-base">
+                  {platform.description}
+                </p>
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
                   Available Now
                 </span>
@@ -222,23 +228,23 @@ export default function Home() {
       </div>
 
       {/* CTA Section */}
-      <div className="py-24 bg-gradient-to-r from-blue-600 to-purple-600">
+      <div className="py-16 sm:py-24 bg-gradient-to-r from-pink-500 to-indigo-600">
         <div className="mx-auto max-w-4xl text-center px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               Ready to start your listening party?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-base sm:text-xl text-indigo-100 mb-8">
               Join thousands of music lovers who are already enjoying
               synchronized streaming together.
             </p>
             <Link
               href="/auth?mode=register"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-block"
+              className="bg-white text-pink-500 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-50 transition-colors shadow-lg inline-block"
             >
               Create Your First Room
             </Link>
@@ -247,13 +253,13 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-indigo-900 text-white py-8 sm:py-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
-                <MusicalNoteIcon className="h-8 w-8 text-blue-400" />
-                <span className="text-2xl font-bold">HeyPlay</span>
+                <MusicalNoteIcon className="h-8 w-8 text-pink-300" />
+                <span className="text-2xl font-bold text-white">HeyPlay</span>
               </div>
               <p className="text-gray-400 mb-4">
                 Bringing people together through music and shared experiences.
@@ -261,7 +267,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-semibold mb-4">Product</h3>
-              <ul className="space-y-2 text-gray-400">
+              <ul className="space-y-2 text-gray-300">
                 <li>
                   <Link
                     href="/features"
@@ -290,7 +296,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
+              <ul className="space-y-2 text-gray-300">
                 <li>
                   <Link
                     href="/help"

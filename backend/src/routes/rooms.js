@@ -242,4 +242,77 @@ router.put("/:id/current-track", auth, async (req, res) => {
   }
 });
 
+// Add media to room
+router.post("/:id/media", auth, async (req, res) => {
+  try {
+    const { url } = req.body;
+    const room = await Room.findById(req.params.id);
+
+    if (!room) {
+      return res.status(404).json({ message: "Room not found" });
+    }
+
+    // Check if user is a participant
+    const participant = room.participants.find(
+      (p) => p.user.toString() === req.user._id.toString()
+    );
+    if (!participant) {
+      return res.status(403).json({ message: "Access denied" });
+    }
+
+    // Extract media info from URL (simplified)
+    let title = "Unknown Media";
+    let type = "youtube";
+
+    if (url.includes("youtube.com") || url.includes("youtu.be")) {
+      type = "youtube";
+      title = "YouTube Video";
+    } else if (url.includes("spotify.com")) {
+      type = "spotify";
+      title = "Spotify Track";
+    } else if (url.includes("soundcloud.com")) {
+      type = "soundcloud";
+      title = "SoundCloud Track";
+    }
+
+    // Add to playlist
+    const newMedia = {
+      url,
+      title,
+      type,
+      addedBy: req.user._id,
+      addedAt: new Date(),
+    };
+
+    if (!room.playlist) {
+      room.playlist = [];
+    }
+    room.playlist.push(newMedia);
+
+    // If no current media is playing, set this as current
+    if (!room.currentMedia) {
+      room.currentMedia = {
+        type,
+        url,
+        title,
+        duration: 0,
+        currentTime: 0,
+        isPlaying: false,
+      };
+    }
+
+    await room.save();
+    await room.populate("playlist.addedBy", "username");
+
+    res.json({
+      message: "Media added successfully",
+      media: newMedia,
+      currentMedia: room.currentMedia,
+    });
+  } catch (error) {
+    console.error("Error adding media:", error);
+    res.status(500).json({ message: "Error adding media" });
+  }
+});
+
 module.exports = router;
